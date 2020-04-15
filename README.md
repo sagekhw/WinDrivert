@@ -7,13 +7,13 @@
 ### streamdump.c: Redirects TCP streams to a local proxy server.
 ### webfilter.c: A simple URL blacklist filter.
 
-- flowtrack.c: usage: flowtrack.exe [filter]
+#### flowtrack.c: usage: flowtrack.exe [filter]
 
-- netdump.c: usage: netdump.exe windivert-filter [priority]
+#### netdump.c: usage: netdump.exe windivert-filter [priority]
  - This is a simple traffic monitor.  It uses a WinDivert handle in SNIFF mode.
  - The SNIFF mode copies packets and does not block the original.
  
-- netfilter.c: usage: netfilter.exe windivert-filter [priority]
+#### netfilter.c: usage: netfilter.exe windivert-filter [priority]
  - This is a simple traffic filter/firewall using WinDivert.
  - Any traffic that matches the windivert-filter will be blocked using one of
  - the following methods:
@@ -21,19 +21,19 @@
  - - UDP: send a ICMP(v6) "destination unreachable" to the packet's source.
  - - ICMP/ICMPv6: Drop the packet.
 
-- passthru.c: usage: passthru.exe [windivert-filter] [num-threads] [batch-size] [priority]
+#### passthru.c: usage: passthru.exe [windivert-filter] [num-threads] [batch-size] [priority]
  - This program does nothing except divert packets and re-inject them.  This is
  - useful for performance testing.
 
-- socketdump.c:usage: socketdump.exe [filter]
+#### socketdump.c:usage: socketdump.exe [filter]
                       socketdump.exe --block [filter]
 
-- streamdump.c: usage: streamdump.exe port
+#### streamdump.c: usage: streamdump.exe port
  - This program demonstrates how to handle streams using WinDivert.
  - The program works by "reflecting" outbound TCP connections into inbound
  - TCP connections that are handled by a simple proxy server.
 
-- webfilter.c: 
+#### webfilter.c: 
  - This is a simple web (HTTP) filter using WinDivert.
  - It works by intercepting outbound HTTP GET/POST requests and matching
  - the URL against a blacklist.  If the URL is matched, we hijack the TCP
